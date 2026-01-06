@@ -1,11 +1,7 @@
+import { CommonAppToWebEvents, CommonWebToAppEvents } from "./common.types"
+
 // Web -> App 이벤트
-export interface ShopWebToAppEvents {
-  log_event: {
-    payload: {
-      event: string
-      params?: Record<string, any>
-    }
-  }
+export interface ShopWebToAppEvents extends CommonWebToAppEvents {
   log_purchase_event: {
     payload: {
       params: Record<string, any>
@@ -25,10 +21,4 @@ export interface ShopWebToAppEvents {
 }
 
 // App -> Web 이벤트
-export interface AppToShopWebEvents {
-  auth_user: {
-    payload: {
-      token: string
-    }
-  }
-}
+export interface AppToShopWebEvents extends CommonAppToWebEvents {}
