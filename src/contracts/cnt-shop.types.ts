@@ -18,6 +18,11 @@ export interface ShopWebToAppEvents extends CommonWebToAppEvents {
       workFlowId: number
     }
   }
+  test_event: {
+    payload: {
+      params: Record<string, any>
+    }
+  }
 }
 
 // App -> Web 이벤트
